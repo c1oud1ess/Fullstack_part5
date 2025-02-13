@@ -1,0 +1,9 @@
+POST http://localhost:3003/api/blogs/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNiMiIsImlkIjoiNjdhZDQ3MjQ5NjM0MDA3MmFlZjA2Y2Y5IiwiaWF0IjoxNzM5NDA5MjM2LCJleHAiOjE3Mzk0MTI4MzZ9.SUoiJ53tB2_klQ_NQRb6_Pb4LC5Gv1UrlBg7XWxCXJA
+
+{
+    "title": "test2",
+    "url": "http://564564",
+    "author": "wawa"
+}
