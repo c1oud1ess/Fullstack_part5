@@ -51,14 +51,15 @@ export const BlogDetails = ({ blog, blogs, setBlogs, user, setMessage, addLike, 
           </button>
         </li>
         <li>{blog.user.name}</li>
-        <button
-          style={{ display: showDelete ? '' : 'none' }}
-          className='deleteButton'
-          type='button'
-          onClick={() => removeBlog()}
-        >
-          remove
-        </button>
+        {showDelete ?(
+          <button
+            className='deleteButton'
+            type='button'
+            onClick={() => removeBlog()}
+          >
+            remove
+          </button>
+        ):(null)}
       </ul>
     </div >
   )

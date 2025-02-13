@@ -79,12 +79,28 @@ describe('Blog app', function() {
       cy.contains('Likes 0').should('not.exist')
     })
 
-    it.only('blog can be deleted by owner', function () {
+    it('blog can be deleted by owner', function () {
       cy.contains('view').click()
       cy.contains('remove').click()
       cy.get('.notification')
         .should('contain', 'remove blog successfully')
       cy.contains('text poro lube').should('not.exist')
+    })
+
+    it('only blog owner can see delete button', function () {
+      const user = {
+        username: 'sb3',
+        name: 'bbke graaan',
+        password: '654321'
+      }
+      cy.request('POST', 'http://localhost:3003/api/users/', user)
+      cy.contains('logout').click()
+      cy.get('#username').type('sb3')
+      cy.get('#password').type('654321')
+      cy.get('#login').click()
+      cy.wait(2000)
+      cy.contains('view').click()
+      cy.contains('remove').should('not.exist')
     })
 
   })
